@@ -3,7 +3,7 @@ const app = express()
 
 // ensure express uses proper middleware
 app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: true }))
 
 app.get("/", (req, res, next) => {
   res.status(202).json({
