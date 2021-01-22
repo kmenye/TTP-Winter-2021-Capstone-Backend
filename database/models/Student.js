@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize")
+const Sequelize = require("sequelize")
 const db = require("../dbinit")
 
 // The student's full name, email, image, and gpa
@@ -10,6 +10,9 @@ const Student = db.sequelize.define("Student", {
   email: {
     type: Sequelize.STRING,
     allowNull: false,
+    validate: {
+      isEmail: true,
+    },
   },
   image: {
     type: Sequelize.STRING,
@@ -17,6 +20,9 @@ const Student = db.sequelize.define("Student", {
   },
   gpa: {
     type: Sequelize.FLOAT,
+    validate: {
+      len: [0, 4],
+    },
     allowNull: false,
   },
 })

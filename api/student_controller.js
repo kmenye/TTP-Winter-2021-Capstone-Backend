@@ -19,7 +19,19 @@ router.get("/", (req, res, next) => {
 })
 
 // GET by PK -> Read by ID
-// CODE
+router.get("/:id", (req, res, next) => {
+  models.Student.findByPk(req.params.id).then((student) => {
+    if (!student) {
+      res.status(404).json({
+        message: "A student by that id was not found to read",
+      })
+    }
+
+    res.status(200).json({
+      student,
+    })
+  })
+})
 
 // POST -> Create
 // localhost:8080/api/students
@@ -29,6 +41,7 @@ router.post("/", (req, res, next) => {
     email: req.body.email,
     image: req.body.image,
     gpa: req.body.gpa,
+    CampusId: req.body.CampusId, // from association
   })
     .then((student) => {
       res.status(200).json({

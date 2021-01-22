@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize")
+const Sequelize = require("sequelize")
 require("dotenv").config()
 
 // params: database name, username, password (do NOT push your password to the GitHub!)
