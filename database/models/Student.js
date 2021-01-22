@@ -1,5 +1,5 @@
-const Sequelize = require("sequelize")
-const db = require("../dbinit")
+const Sequelize = require("sequelize");
+const db = require("../dbinit");
 
 // The student's full name, email, image, and gpa
 const Student = db.sequelize.define("Student", {
@@ -25,6 +25,8 @@ const Student = db.sequelize.define("Student", {
     },
     allowNull: false,
   },
-})
+});
 
-module.exports = Student
+module.exports = Student;
+
+// campus id?
