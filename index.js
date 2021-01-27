@@ -1,15 +1,15 @@
 //NODE MODULES
 const express = require('express');
-const morgan = require('morgan');
-const compression = require('compression');
+const app = express();
+const axios = require('axios');
 const cors = require('cors');
-const path = require('path');
+const db = require('./db');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //IMPORTS/VARIABLES
 const PORT = process.env.PORT || 8080;
-const db = require('./db');
 
-const app = express();
 
 //CORS!
 app.use(cors());

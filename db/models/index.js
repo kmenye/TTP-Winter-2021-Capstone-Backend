@@ -1,7 +1,11 @@
-const Player = require('./player');
+const db = require("../dbinit")
+const Electronics = require('./electronics');
 
-//ASSOICATIONS GO HERE -- Read more at https://sequelize.org/master/manual/assocs.html
+
+db.sequelize.sync({ alter: true})
+//associations
+
 
 module.exports = {
-  Player,
+  Electronics,
 };
