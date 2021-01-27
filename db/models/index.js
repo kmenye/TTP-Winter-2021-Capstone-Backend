@@ -1,7 +1,15 @@
-const Player = require('./player');
+const db = require("../dbinit");
+const User = require("./User");
+const Item = require("./Item");
 
-//ASSOICATIONS GO HERE -- Read more at https://sequelize.org/master/manual/assocs.html
+// association
+User.hasMany(Item);
+Item.belongsTo(Student);
+
+// remove this after project is done, allows for table changes in db
+db.sequelize.sync({ alter: true });
 
 module.exports = {
-  Player,
+  User,
+  Item,
 };

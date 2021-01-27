@@ -1,13 +1,13 @@
 //NODE MODULES
-const express = require('express');
-const morgan = require('morgan');
-const compression = require('compression');
-const cors = require('cors');
-const path = require('path');
+const express = require("express");
+const morgan = require("morgan");
+const compression = require("compression");
+const cors = require("cors");
+const path = require("path");
 
 //IMPORTS/VARIABLES
 const PORT = process.env.PORT || 8080;
-const db = require('./db');
+const db = require("./db");
 
 const app = express();
 
@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 
 //Mount on API
-app.use('/api', require('./api'));
+app.use("/api", require("./api"));
 
 //START BACKEND SERVER FUNCTIOON
 const serverRun = () => {
@@ -36,3 +36,5 @@ syncDb();
 serverRun();
 
 module.exports = app;
+
+// maybe change this to what we had previously
