@@ -4,7 +4,7 @@ const Item = require("./Item");
 
 // association
 User.hasMany(Item);
-Item.belongsTo(Student);
+Item.belongsTo(User);
 
 // remove this after project is done, allows for table changes in db
 db.sequelize.sync({ alter: true });

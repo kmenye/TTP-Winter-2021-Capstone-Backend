@@ -1,5 +1,5 @@
 const router = require("express").Router();
-module.exports = router;
+
 
 // Mounts players api calls from api file on /api/players
 router.use("/players", require("./players"));
@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 //Export our api so we can use it on our server index file(main exit point for server)
 
 const express = require("express");
-const router = express.Router();
+
 
 router.use("/items", require("./item_controller"));
 router.use("/users", require("./user_controller"));

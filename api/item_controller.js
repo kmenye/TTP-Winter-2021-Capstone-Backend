@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const models = require("../database/models");
+const models = require("../db/models");
 
 // GET -> Read All
 // localhost:8080/api/students/
