@@ -1,10 +1,11 @@
-const Sequelize = require("sequelize");
+/* const Sequelize = require("sequelize");
 require("dotenv").config();
 
 // params: database name, username, password (do NOT push your password to the GitHub!)
-const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USER , process.env.DATABASE_PASS, {
-  host: process.env.localhost,
+const sequelize = new Sequelize("garb", "postgres", "Kuzya718", {
+  host: "localhost",
   dialect: "postgres",
+  omitNull: true,
   // port: 5433, this port is only for Jahed
 });
 //
@@ -22,3 +23,4 @@ console.log("process.env.host:", process.env.host);
 testDatabase();
 
 module.exports = { sequelize };
+*/

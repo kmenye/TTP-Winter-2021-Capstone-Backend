@@ -1,9 +1,9 @@
 const Sequelize = require("sequelize");
-const db = require("../dbinit");
+const db = require("../db");
 
 // The student's full name, email, image, and gpa
-const Item = db.sequelize.define("Item", {
-  type: {
+const Item = db.define("Item", {
+  class: {
     type: Sequelize.STRING,
     allowNull: false,
   },

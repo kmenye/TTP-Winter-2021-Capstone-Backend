@@ -2,8 +2,16 @@ const express = require("express");
 const router = express.Router();
 const models = require("../db/models");
 
+router.get("/", (req, res, next) => {
+  console.log("get body: ", req.body);
+  models.Users.findAll().then(users => { 
+    res.status(200).json({
+      users,
+    });
+  });
+});
 // POST -> Create
-// localhost:8080/api/students
+
 router.post("/", (req, res, next) => {
   console.log("request body:", req.body);
   models.User.create({
@@ -13,7 +21,7 @@ router.post("/", (req, res, next) => {
   })
     .then((user) => {
       res.status(200).json({
-        message: "Successfully insered user into database",
+        message: "Successfully inserted user into database",
         user,
       });
     })
