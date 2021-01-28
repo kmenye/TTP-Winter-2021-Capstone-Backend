@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 require("dotenv").config();
 
 // params: database name, username, password (do NOT push your password to the GitHub!)
-const sequelize = new Sequelize("crud", "postgres", "TTP", {
+const sequelize = new Sequelize("garbtest", "postgres", "TTP", {
   host: process.env.localhost,
   dialect: "postgres",
 });
