@@ -1,8 +1,9 @@
 const Sequelize = require("sequelize");
-const databaseName = "authorize-backend";
+const databaseName = "garbo-test";
 
 console.log("Opening database connection");
+console.log('still here');
 
-const db = new Sequelize(`postgres://localhost:5432/${databaseName}`, { logging: false });
+const db = new Sequelize(`postgres://localhost:5000/${databaseName}`, { logging: false });
 
 module.exports = db;
