@@ -9,6 +9,8 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const db = require("./database");
 const sessionStore = new SequelizeStore({ db });
 
+console.log('in app.js');
+
 const app = express();
 
 passport.serializeUser((user, done) => done(null, user.id));
@@ -23,7 +25,7 @@ passport.deserializeUser(async (id, done) => {
 });
 
 const syncDb = async () => {
-  await db.sync({ force: true });
+  await db.sync({ force: true});
 }
 
 const configureApp = () => {
@@ -32,7 +34,6 @@ const configureApp = () => {
 
   app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 
-  /*
   
   app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -41,7 +42,6 @@ const configureApp = () => {
     next();
   });
 
-  */
 
   app.use(
     session({
@@ -70,7 +70,9 @@ const bootApp = async () => {
   await sessionStore.sync();
   await syncDb();
   await configureApp();
-  await startListening();
 }
 
+startListening();
 bootApp();
+
+console.log('still in app.js');
